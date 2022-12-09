@@ -6,3 +6,7 @@ def twenty_twenty_two():
     2022
     """
     return ((20 ** 2 + 22 ** 2) + ((2 ** 0 + 2 ** 2) * 20 * 22) + (20 + 2 * 2) * 20 * 2) // 2
+
+
+if __name__ == '__main__':
+    print(twenty_twenty_two())
