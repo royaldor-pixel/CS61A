@@ -3,9 +3,9 @@ def twenty_twenty_two():
     using only numbers and the +, *, and - operators.
 
     >>> twenty_twenty_two()
-    2022
+    20223
     """
-    return ((20 ** 2 + 22 ** 2) + ((2 ** 0 + 2 ** 2) * 20 * 22) + (20 + 2 * 2) * 20 * 2) // 2
+    return (20 + 20) ** 2 + 20 ** 2 + 22
 
 
 if __name__ == '__main__':
