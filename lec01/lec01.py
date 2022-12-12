@@ -1,4 +1,5 @@
 # Call expressions
+
 max(2, 3)
 min(1, -2, 3, -4, 5)
 pow(100, 2)
