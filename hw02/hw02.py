@@ -8,7 +8,6 @@ triple = lambda x: 3 * x
 
 increment = lambda x: x + 1
 
-
 HW_SOURCE_FILE = __file__
 
 
@@ -31,7 +30,10 @@ def product(n, term):
     >>> product(3, triple)    # 1*3 * 2*3 * 3*3
     162
     """
-    "*** YOUR CODE HERE ***"
+    product_sum = 1
+    for i in range(1, n + 1):
+        product_sum *= term(i)
+    return product_sum
 
 
 def accumulate(merger, start, n, term):
@@ -58,7 +60,10 @@ def accumulate(merger, start, n, term):
     >>> accumulate(lambda x, y: (x + y) % 17, 19, 20, square)
     16
     """
-    "*** YOUR CODE HERE ***"
+    func_sum = start
+    for i in range(1, n + 1):
+        func_sum = merger(func_sum, term(i))
+    return func_sum
 
 
 def summation_using_accumulate(n, term):
@@ -75,7 +80,7 @@ def summation_using_accumulate(n, term):
     >>> [type(x).__name__ for x in ast.parse(inspect.getsource(summation_using_accumulate)).body[0].body]
     ['Expr', 'Return']
     """
-    "*** YOUR CODE HERE ***"
+    return accumulate(add, 0, n, term)
 
 
 def product_using_accumulate(n, term):
@@ -92,4 +97,4 @@ def product_using_accumulate(n, term):
     >>> [type(x).__name__ for x in ast.parse(inspect.getsource(product_using_accumulate)).body[0].body]
     ['Expr', 'Return']
     """
-    "*** YOUR CODE HERE ***"
+    return product(n, term)
